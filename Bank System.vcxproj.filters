@@ -112,14 +112,14 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Admin.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
     <Text Include="Clients.txt">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </Text>
     <Text Include="Employee.txt">
-      <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="Admin.txt">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
 </Project>
