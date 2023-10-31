@@ -33,9 +33,6 @@
     <ClCompile Include="Validation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataSourceInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FileManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -80,9 +77,6 @@
     <ClInclude Include="Validation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataSourceInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FileManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -110,6 +104,9 @@
     <ClInclude Include="Screens.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DataSourceInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Admin.txt">
@@ -119,6 +116,15 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="Employee.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lastClient.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lastEmployee.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lastAdmin.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
