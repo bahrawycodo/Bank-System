@@ -21,6 +21,11 @@ string Person::getPassword() {
 	return this->password;
 }
 //Setters
+void Person::setData(int id, string name, string password) {
+	this->setId(id);
+	this->setName(name);
+	this->setPassword(password);
+}
 void Person::setId(int id) {
 	this->id = id;
 }
