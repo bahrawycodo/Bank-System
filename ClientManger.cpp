@@ -13,7 +13,7 @@ void ClientManger::updatePassword(Client* client) {
 	client->updatePassword(client->getId(), client->getPassword());
 }
 Client* ClientManger::login(int id, string password){
-	return FileManager::clientLogin(id, password);
+	//return FileManager::clientLogin(id, password);
 }
 bool ClientManger::clientOptions(Client* client){
 	if (client->getId()) {
