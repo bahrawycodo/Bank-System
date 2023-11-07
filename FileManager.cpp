@@ -28,13 +28,16 @@ vector<Employee> FileManager::getAllEmployees() {
 	}
 	return e;
 };
-vector<Admin> FileManager::getAllAdmins() {
+Admin* FileManager::getAllAdmins() {
 	vector<string> ss = FilesHelper::split("Admins");
-	vector<Admin> a;
-	for (int i = 0; i < ss.size(); ++i)
-	{
-		a.push_back(Parser::parseToAdmin(ss[i]));
+	Employee e;
+	Admin* a = Admin::getAdmin();
+	if (ss.size()) {
+		e= Parser::parseToEmployee(ss[0]);
+		a->setId(e.getId());
+		a->setData(e.getName(), e.getPassword(), e.getSalary());
 	}
+
 	return a;
 
 };
@@ -47,25 +50,3 @@ void FileManager::removeAllEmployees() {
 void FileManager::removeAllAdmins() {
 	FilesHelper::clearFile("Admins", "lastAdmin");
 };
-Employee* employeeLogin(int id, string password){
-	vector<Employee> employees = FileManager::getAllEmployees();
-	for (Employee& employee : employees)
-	{
-		if (employee.getId() == id && employee.getPassword() == password) {
-			return &employee;
-			break;
-		}
-	}
-	return nullptr;
-}
-Admin* adminLogin(int id, string password){
-	vector<Admin> admins = FileManager::getAllAdmins();
-	for (Admin& admin : admins)
-	{
-		if (admin.getId() == id && admin.getPassword() == password) {
-			return &admin;
-			break;
-		}
-	}
-	return nullptr;
-}

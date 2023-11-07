@@ -1,43 +1,10 @@
 #include "AdminManager.h"
 #include "FileManager.h"
 #include "Admin.h"
-#include "Validation.h"
+#include <exception>
+#include "validation.h"
+
 void AdminManager::printClientMenu(){
-	
-	int id = 0;
-	string password;
-newlogin:
-	cout << "Enter Id";
-	cin >> id;
-
-	cout << "\nEnter Password";
-	cin >> password;
-	try
-	{
-		Admin* a = Validation::AdminLogin(AdminManager::login(id, password));
-	}
-	catch (exception& e) {
-	{
-		cout << e.what();
-		goto newlogin;
-	}
-
-	//int choice = AdminManager::AdminOptions();
-
-}
-Admin* AdminManager::login(int id, string password){
-	vector<Admin> admins = FileManager::getAllAdmins();
-	for (Admin& admin : admins)
-	{
-		if (admin.getId() == id && admin.getPassword() == password) {
-			return &admin;
-			break;
-		}
-	}
-	return nullptr;
-}
-bool AdminManager::AdminOptions(Admin* admin){
-	int choice = 0;
 	cout << "(1) Display my info\n";
 	cout << "(2) Update Password\n";
 	cout << "(3) Add new client\n";
@@ -50,6 +17,28 @@ bool AdminManager::AdminOptions(Admin* admin){
 	cout << "(10) Edit Employee info\n";
 	cout << "(11) Logout\n";
 	cout << "Your choise is: ";
+}
+//Admin* AdminManager::updatePassword(Admin* admin) {
+//	string password;
+//	cout << "Enter Password";
+//	cin >> password;
+//
+//	
+//}
+
+//Admin* AdminManager::login(int id, string password){
+//	vector<Admin> admins = FileManager::getAllAdmins();
+//	for (Admin& admin : admins)
+//	{
+//		if (admin.getId() == id && admin.getPassword() == password) {
+//			return &admin;
+//			break;
+//		}
+//	}
+//	return nullptr;
+//}
+bool AdminManager::AdminOptions(Admin* admin){
+	int choice = 0;
 	cin >> choice;
 	return choice;
 }

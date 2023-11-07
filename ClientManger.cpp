@@ -10,13 +10,13 @@ void ClientManger::printClientMenu() {
 	cout << "(7) Logout\n";
 }
 void ClientManger::updatePassword(Client* client) {
-	client->updatePassword(client->getId(), client->getPassword());
+	//client->updatePassword(client->getId(), client->getPassword());
 }
-Client* ClientManger::login(int id, string password){
-	//return FileManager::clientLogin(id, password);
-}
-bool ClientManger::clientOptions(Client* client){
-	if (client->getId()) {
-
-	}
-}
+//Client* ClientManger::login(int id, string password){
+//	//return FileManager::clientLogin(id, password);
+//}
+//bool ClientManger::clientOptions(Client* client){
+//	if (client->getId()) {
+//
+//	}
+//}

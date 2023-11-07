@@ -7,10 +7,16 @@ using namespace std;
 #pragma once
 class Validation {
 public:
-    static string Name(string name);
-    static string Password(string password);
-    static double Balance(double balance);
-    static double Salary(double salary);
+    static bool Name(string name);
+    static bool Password(string password);
+    static bool Balance(double balance);
+    static bool Salary(double salary);
+    static bool NotorequalZero(double num);
+    static bool LargerthanZero(double num);
+    static void NameException();
+    static void PasswordException();
+    static void BalanceException();
+    static void SalaryException();
     static Client* ClientLogin(Client* client);
     static Employee* EmployeeLogin(Employee* employee);
     static Admin* AdminLogin(Admin* admin);

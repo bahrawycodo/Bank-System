@@ -1,6 +1,7 @@
 #pragma once
 class Screens
 {
+public:
 	static void bankName();
 	static void welcome();
 	static void loginOptions();

@@ -54,6 +54,9 @@
     <ClCompile Include="Screens.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Shared.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
@@ -95,6 +98,9 @@
     <ClInclude Include="DataSourceInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Shared.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt">
@@ -106,10 +112,11 @@
     <Text Include="lastEmployee.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="lastAdmin.txt">
+    <Text Include="Admins.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Admins.txt" />
-    <Text Include="Employees.txt" />
+    <Text Include="Employees.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

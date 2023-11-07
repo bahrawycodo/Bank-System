@@ -1,3 +1,8 @@
 ﻿  Bank System.cpp
-C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Bank System.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Shared.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.cpp(76,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.cpp(80,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
   Bank System.vcxproj -> C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\x64\Debug\Bank System.exe

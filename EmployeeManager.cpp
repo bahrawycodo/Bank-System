@@ -12,5 +12,5 @@ void newClient(Employee* employee){}
 void listAllClients(Employee* employee){}
 void searchForClient(Employee* employee){}
 void editClientInfo(Employee* employee){}
-Client* login(int id, string password){}
-bool employeeOptions(Client* client){}
+//Client* login(int id, string password) { return {}; }
+//bool employeeOptions(Client* client) { return 1; }

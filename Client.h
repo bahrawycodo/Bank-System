@@ -10,7 +10,9 @@ public:
 	Client(int id, string name, string password, double balance);
 	//Setters
 	void setBalance(double balance);
-	void setData(int id, string name, string password, double balance);
+	void setData( string name, string password, double balance);
+	//Operator = Overloading
+	void operator = (Client c);
 	//getters
 	double getBalance();
 	//Methods
@@ -18,7 +20,7 @@ public:
 	void withdraw(double amount);
 	void transferTo(double amount, Client& recipient);
 	void checkBalance();
+	void DisplayMainInfo();
 	void Display();
-	void updatePassword(int id, string password);
 };
 
