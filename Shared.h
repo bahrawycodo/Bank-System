@@ -13,9 +13,9 @@ class Shared
 public:	
 
 	//First Time Load
-	static void firstLoad();
+	static void FirstLoad();
 	//Last Time
-	static void saveAll();
+	static void OnEnd();
 	//Getters Methods
 	static vector<Client> getClients();
 	static vector<Employee> getEmployees();

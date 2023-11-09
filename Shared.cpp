@@ -6,30 +6,43 @@ vector<Employee> employees;
 Admin* admin;
 
 //First Load
-void Shared::firstLoad() {
+void Shared::FirstLoad() {
 	clients = FileManager::getAllClients();
 	employees = FileManager::getAllEmployees();
 	admin = FileManager::getAllAdmins();
-	FileManager::removeAllAdmins();
-	FileManager::removeAllClients();
-	FileManager::getAllEmployees();
+	//FileManager::removeAllAdmins();
+	//FileManager::removeAllClients();
+	//FileManager::getAllEmployees();
 }
 //Last Load
+
 void saveClients() {
+	FileManager::removeAllClients();
 	for (Client c : clients) {
 		FileManager::addClient(c);
 	}
 }
 void saveEmployees() {
+	FileManager::removeAllEmployees();
 	for (Employee e : employees) {
 		FileManager::addEmployee(e);
 	}
 }
-
-void Shared::saveAll() {
+void saveAdmin() {
+	FileManager::removeAllAdmins();
+	FileManager::addAdmin(*admin);
+}
+void saveAll() {
 	saveClients();
 	saveEmployees();
-	FileManager::addAdmin(*admin);
+	saveAdmin();
+}
+void endMessage() {
+	cout << "\n\nGOODBYE\n\n";
+}
+void Shared::OnEnd() {
+	saveAll();
+	endMessage();
 }
 //Getters Methods
 vector<Client> Shared::getClients() {
@@ -56,12 +69,12 @@ vector<Employee> Shared::getEmployees() {
 //Getters By Id
 Client* Shared::getClient(int id) {
 	if(id <= clients.size())
-		return &clients[id];
+		return &clients[id-1];
 	return nullptr;
 };
 Employee* Shared::getEmployee(int id) {
 	if (id <= employees.size())
-		return &employees[id];
+		return &employees[id-1];
 	return nullptr;
 
 };
@@ -95,10 +108,10 @@ void Shared::addAdmin(Admin *a) {
 //}
 //Edit Methods
 void Shared::editClient(int id, string name, string password, double balance) {
-	clients[id].setData(name, password, balance == NULL ? clients[id].getBalance() : balance);
+	clients[id-1].setData(name, password, balance == NULL ? clients[id].getBalance() : balance);
 };
 void Shared::editEmployee(int id, string name, string password, double salary) {
-	employees[id].setData(name, password, salary == NULL ? employees[id].getSalary() : salary);
+	employees[id-1].setData(name, password, salary == NULL ? employees[id].getSalary() : salary);
 };
 void Shared::editAdmin(int id, string name, string password, double salary) {
 	admin->setData(name, password, salary == NULL ? admin->getSalary() : salary);

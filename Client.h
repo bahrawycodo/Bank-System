@@ -17,8 +17,8 @@ public:
 	double getBalance();
 	//Methods
 	void deposit(double amount);
-	void withdraw(double amount);
-	void transferTo(double amount, Client& recipient);
+	bool withdraw(double amount);
+	bool transferTo(double amount, Client* recipient);
 	void checkBalance();
 	void DisplayMainInfo();
 	void Display();

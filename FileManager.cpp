@@ -30,10 +30,9 @@ vector<Employee> FileManager::getAllEmployees() {
 };
 Admin* FileManager::getAllAdmins() {
 	vector<string> ss = FilesHelper::split("Admins");
-	Employee e;
 	Admin* a = Admin::getAdmin();
 	if (ss.size()) {
-		e= Parser::parseToEmployee(ss[0]);
+		Employee e(Parser::parseToEmployee(ss[0]));
 		a->setId(e.getId());
 		a->setData(e.getName(), e.getPassword(), e.getSalary());
 	}

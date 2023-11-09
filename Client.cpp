@@ -33,15 +33,20 @@ double Client::getBalance() {
 void Client::deposit(double amount) {
 	this->balance=this->getBalance() + amount;
 }
-void Client::withdraw(double amount) {
-	if(Validation::NotorequalZero(this->getBalance() - amount))
+bool Client::withdraw(double amount) {
+	if (Validation::NotorequalZero(this->getBalance() - amount)) {
 		this->getBalance() - amount;
+		return true;
+	}
+	return false;
 }
-void Client::transferTo(double amount, Client& recipient) {
+bool Client::transferTo(double amount, Client* recipient) {
 	if(Validation::NotorequalZero(this->getBalance() - amount)){
 		this->balance=this->getBalance()- amount;
-		recipient.deposit(amount);
+		recipient->deposit(amount);
+		return true;
 	}
+	return false;
 }
 void Client::checkBalance() {
 	cout << this->balance;
