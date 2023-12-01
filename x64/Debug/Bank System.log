@@ -1,1 +1,28 @@
-﻿  Bank System.vcxproj -> C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\x64\Debug\Bank System.exe
+﻿  Admin.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  AdminManager.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Bank System.cpp
+  Client.cpp
+  ClientManger.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Employee.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  EmployeeManager.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  FileManager.cpp
+  FilesHelper.cpp
+  Parser.cpp
+  Person.cpp
+  ReadData.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Screens.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Screens.cpp(189,3): warning C4551: function call missing argument list
+  Shared.cpp
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.cpp(86,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\Shared.cpp(90,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Validation.cpp
+  Generating Code...
+  Bank System.vcxproj -> C:\Users\Bahrawy Codo\Desktop\BankSystem-main\BankSystem-main\x64\Debug\Bank System.exe
