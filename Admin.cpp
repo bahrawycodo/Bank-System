@@ -1,6 +1,5 @@
 #include "Employee.h"
 #include "Admin.h"
-#include "FileManager.h"
 #include "Shared.h"
 Admin* Admin::myAdmin = nullptr;
 Admin::Admin() {}
@@ -23,4 +22,7 @@ void Admin::editEmployee(int id, string name, string password, double salary) {
 }
 void Admin::listEmployee() {
 	Shared::printEmployees();
+}
+void Admin::deleteEmployee(int id) {
+	Shared::deleteEmployee(id);
 }

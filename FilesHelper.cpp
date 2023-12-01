@@ -49,35 +49,35 @@ void FilesHelper::saveEmployee(string fileName, string lastIdFile, Employee e) {
 //	File << 1 << "&" << "&" << admin->getName() << "&" << admin->getPassword() << "&" << admin->getSalary() << endl;
 //	File.close();
 //}
-void FilesHelper::getClients() {
-	Client c;
+vector<Client>* FilesHelper::getClients() {
 	vector<string> ss = FilesHelper::split("Clients");
+	vector<Client> *c = new vector<Client>;
 	for (int i = 0; i < ss.size(); ++i)
 	{
-		c = Parser::parseToClient(ss[i]);
-		c.DisplayMainInfo();
-		cout << "========================================\n";
+		(*c).push_back(Parser::parseToClient(ss[i]));
 	}
-};
-void FilesHelper::getEmployees() {
-	vector<string> ss = FilesHelper::split("Employees");
-	Employee e;
-	for (int i = 0; i < ss.size(); ++i)
-	{
-		e= Parser::parseToEmployee(ss[i]);
-		e.DisplayMainInfo();
-		cout << "========================================\n";
-	}
-};
-void FilesHelper::getAdmins() {
-	vector<string> ss = FilesHelper::split("Admins");
-	Employee e = Parser::parseToEmployee(ss[0]);
-	Admin* a = Admin::getAdmin();
 
-	a->setId(e.getId());
-	a->setData(e.getName(), e.getPassword(), e.getSalary());
-	a->DisplayMainInfo();
-	cout << "========================================\n";
+	return c;
+};
+vector<Employee>*  FilesHelper::getEmployees() {
+	vector<string> ss = FilesHelper::split("Employees");
+	vector<Employee> *e=new vector<Employee>;
+	for (int i = 0; i < ss.size(); ++i)
+	{
+		(*e).push_back(Parser::parseToEmployee(ss[i]));
+	}
+	return e;
+};
+Admin* FilesHelper::getAdmins() {
+	vector<string> ss = FilesHelper::split("Admins");
+	Admin* a = Admin::getAdmin();
+	if (ss.size()) {
+		Employee e(Parser::parseToEmployee(ss[0]));
+		a->setId(e.getId());
+		a->setData(e.getName(), e.getPassword(), e.getSalary());
+	}
+
+	return a;
 };
 void FilesHelper::clearFile(string fileName) {
 	fstream File(fileName + ".txt", fstream::out | fstream::trunc);

@@ -1,14 +1,10 @@
 #include "Person.h"
 #include "Client.h"
-#include <exception>
 #include "validation.h"
-#include <vector>
-#include "FileManager.h"
 Client::Client() {
-	this->balance = 1500;
+	this->balance = 0;
 }
 Client::Client(int id,string name, string password, double balance) : Person(id,name, password) {
-	this->balance = 1500;
 	this->setBalance(balance);
 }
 //Setters
@@ -17,8 +13,7 @@ void Client::setData(string name, string password, double balance) {
 	this->balance = balance;
 }
 void Client::setBalance(double balance) {
-	if (Validation::Balance(balance))
-		this->balance = balance;
+	this->balance = balance;
 }
 //Operator = Overloading
 void Client::operator = (Client c) {
@@ -35,7 +30,7 @@ void Client::deposit(double amount) {
 }
 bool Client::withdraw(double amount) {
 	if (Validation::NotorequalZero(this->getBalance() - amount)) {
-		this->getBalance() - amount;
+		this->balance =this->getBalance() - amount;
 		return true;
 	}
 	return false;
@@ -49,7 +44,7 @@ bool Client::transferTo(double amount, Client* recipient) {
 	return false;
 }
 void Client::checkBalance() {
-	cout << this->balance;
+	cout << this->balance << endl;
 }
 void Client::DisplayMainInfo() {
 	Person::DisplayMainInfo();

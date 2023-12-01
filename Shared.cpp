@@ -49,18 +49,18 @@ vector<Employee> Shared::getEmployees() {
 	return employees;
 };
 
-//void Shared::reloadClients() {
-//	for (int i = 0; i < clients.size(); i++)
-//	{
-//		clients[i].setId(i);
-//	}
-//}
-//void Shared::reloadEmployees() {
-//	for (int i = 0; i < employees.size(); i++)
-//	{
-//		employees[i].setId(i);
-//	}
-//}
+void Shared::reloadClients() {
+	for (int i = 0; i < clients.size(); i++)
+	{
+		clients[i].setId(i+1);
+	}
+}
+void Shared::reloadEmployees() {
+	for (int i = 0; i < employees.size(); i++)
+	{
+		employees[i].setId(i+1);
+	}
+}
 
 
 //Getters By Id
@@ -95,23 +95,39 @@ void Shared::addAdmin(Admin *a) {
 	a->setId(1);
 };
 //Delete Methods
-//void Shared::deleteClient(int id) {
-//	clients.erase(clients.begin()+id-1);
-//	Shared::reloadClients();
-//}
-//void Shared::deleteEmployee(int id) {
-//	employees.erase(employees.begin() + id - 1);
-//	Shared::reloadEmployees();
-//}
+void Shared::deleteClient(int id) {
+	clients.erase(clients.begin()+id-1);
+	Shared::reloadClients();
+}
+void Shared::deleteEmployee(int id) {
+	employees.erase(employees.begin() + id - 1);
+	Shared::reloadEmployees();
+}
 //Edit Methods
 void Shared::editClient(int id, string name, string password, double balance) {
-	clients[id-1].setData(name, password, balance == NULL ? clients[id].getBalance() : balance);
+	name = name == "" ? clients[id - 1].getName() : name;
+	password=password == "" ? clients[id - 1].getPassword():password;
+	balance = balance == NULL ? clients[id - 1].getBalance() : balance;
+	clients[id-1].setData(name,password , balance);
 };
 void Shared::editEmployee(int id, string name, string password, double salary) {
-	employees[id-1].setData(name, password, salary == NULL ? employees[id].getSalary() : salary);
+	name = name == "" ? employees[id - 1].getName() : name;
+	password = password == "" ? employees[id - 1].getPassword() : password;
+	salary = salary == NULL ? employees[id - 1].getSalary() : salary;
+
+	employees[id-1].setData(name, password, salary);
 };
 void Shared::editAdmin(int id, string name, string password, double salary) {
-	admin->setData(name, password, salary == NULL ? admin->getSalary() : salary);
+	admin->setData(name, password, salary);
+};
+void Shared::editAdminName(int id, string name) {
+	admin->setName(name);
+};
+void Shared::editAdminPassword(int id, string password) {
+	admin->setPassword(password);
+};
+void Shared::editAdminSalary(int id, double salary) {
+	admin->setSalary(salary);
 };
 //Display Methods
 void Shared::printClients() {
@@ -120,6 +136,8 @@ void Shared::printClients() {
 		c.DisplayMainInfo();
 		cout << "========================================\n";
 	}
+	if (clients.size() == 0)
+		cout << "There aren't any Clients\n";
 };
 void Shared::printEmployees() {
 	for (Employee e :employees)
@@ -127,6 +145,8 @@ void Shared::printEmployees() {
 		e.DisplayMainInfo();
 		cout << "========================================\n";
 	}
+	if (employees.size() == 0)
+		cout << "There aren't any Clients\n";
 };
 void Shared::printAdmin() {
 		admin->DisplayMainInfo();

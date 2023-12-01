@@ -1,15 +1,10 @@
 #include "Person.h"
 #include "Employee.h"
-#include "FileManager.h"
-#include "FilesHelper.h"
-#include <exception>
-#include "validation.h"
 #include "Shared.h"
 Employee::Employee(){
-	this->salary = 5000;
+	this->salary = 0;
 }
 Employee::Employee(int id,string name, string password, double salary) : Person(id,name, password) {
-	this->salary = 5000;
 	this->setSalary(salary);
 }
 //Setters
@@ -19,8 +14,7 @@ void Employee::setData(string name, string password, double salary) {
 }
 
 void Employee::setSalary(double salary) {
-	if (Validation::Salary(salary))
-		this->salary = salary;
+	this->salary = salary;
 }
 //Operator = Overloading
 void Employee::operator = (Employee e) {
@@ -50,4 +44,7 @@ void Employee::listClient() {
 }
 void Employee::editClient(int id, string name, string password, double balance) {
 	Shared::editClient(id, name, password, balance);
+}
+void Employee::deleteClient(int id) {
+	Shared::deleteClient(id);
 }
